@@ -30,3 +30,10 @@ html{
   color: rgb(255, 253, 253);
 
 }
+
+.input-note{
+  display: flex;
+  gap: 1rem;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+}

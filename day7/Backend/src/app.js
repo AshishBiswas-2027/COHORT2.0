@@ -6,6 +6,7 @@ const cors = require ('cors')
 const app = express()
 app.use (cors())
 app.use(express.json())
+app.use(express.static("./public"))// js aur css files ko html se open karne k liye
 
 app.post('/api/notes', async (req, res) => {
     const { title, description } = req.body;
@@ -50,4 +51,9 @@ app.patch('/api/notes/:id', async (req, res) => {
     })
     
 })
+
+app.use("*name", (req, res) => {
+    res.sendFile(path.join(__dirname,"..","/public/index.html"))
+})
+
 module.exports = app
