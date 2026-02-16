@@ -11,7 +11,7 @@ function App() {
   // 🔵 Fetch all notes
   function fetchNotes() {
     axios
-      .get("http://localhost:3000/api/notes")
+      .get("https://cohort2-0-l303.onrender.com/api/notes")
       .then((res) => {
         setNotes(res.data.notes);
       })
