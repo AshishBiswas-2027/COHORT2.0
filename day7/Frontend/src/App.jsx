@@ -11,7 +11,7 @@ function App() {
   // 🔵 Fetch all notes
   function fetchNotes() {
     axios
-      .get("https://cohort2-0-l303.onrender.com/api/notes")
+      .get("https://cohort2-0-notes-app.onrender.com/api/notes")
       .then((res) => {
         setNotes(res.data.notes);
       })
@@ -31,7 +31,7 @@ function App() {
     const { Title, Description } = e.target.elements;
 
     axios
-      .post("https://cohort2-0-l303.onrender.com/api/notes", {
+      .post("https://cohort2-0-notes-app.onrender.com/api/notes", {
         title: Title.value,
         description: Description.value,
       })
@@ -48,7 +48,7 @@ function App() {
   // 🔴 Delete note
   function handleDelete(noteId) {
     axios
-      .delete("https://cohort2-0-l303.onrender.com/api/notes/" + noteId)
+      .delete("https://cohort2-0-notes-app.onrender.com/api/notes/" + noteId)
       .then((res) => {
         console.log(res.data);
         fetchNotes();
@@ -61,7 +61,7 @@ function App() {
   // 🟣 Update note
   function handleUpdate(id) {
     axios
-      .patch(`https://cohort2-0-l303.onrender.com/api/notes/${id}`, {
+      .patch(`https://cohort2-0-notes-app.onrender.com/api/notes/${id}`, {
         description: editText,
       })
       .then((res) => {
